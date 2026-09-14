@@ -29,7 +29,8 @@ pub fn handler(ctx: Context<Initialize>) -> Result<()> {
         authority: ctx.accounts.payer.key(),
         max_amount: RateLimit::MAX_AMOUNT,
         window_start: Clock::get()?.unix_timestamp,
-        amount_transferred: 0
+        amount_transferred: 0,
+        mint: ctx.accounts.mint.key()
     });
 
     Ok(())
